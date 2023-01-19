@@ -5,9 +5,36 @@
 // * базовая типографика всего сайта
 html {
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 // * шрифты заголовков
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'FireNight', sans-serif;
+	font-weight: 700;
+}
+h1 {
+	font-size: 2.5rem; // 40px
+}
+
+h2 {
+	font-size: 2rem; // 32px
+}
+
+h3 {
+	font-size: 1.625rem; // 26px
+}
+
+h4 {
+	font-size: 1.375rem; // 22px
+}
+
+h5 {
+	font-size: 1.125rem; // 18px
+}
+
+h6 {
+	font-size: 1rem; // 16px
 }
