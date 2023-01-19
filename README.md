@@ -1,1 +1,1 @@
-# evolution-of-thought
+# ЭволюцияМысли.РФ
