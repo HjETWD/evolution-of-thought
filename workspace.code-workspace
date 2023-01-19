@@ -4,5 +4,18 @@
 			"path": "."
 		}
     ],
-    "settings": {}
+    "settings": {
+		"liveServer.settings.donotShowInfoMsg": true,
+		"liveSassCompile.settings.watchOnLaunch": true,
+		"liveSassCompile.settings.showOutputWindowOn": "Error",
+		"liveSassCompile.settings.generateMap": false,
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": "/docs/css/",
+				"savePathReplacementPairs": null
+			}
+		]
+	}
 }
