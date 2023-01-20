@@ -2,50 +2,100 @@
  * * Типографика сайта
  */
 
+:root {
+
+	--base-font-family: 'Open Sans', sans-serif;
+	--base-font-weight: 400;
+	--base-font-size: 16px;
+	--base-line-height: 1.5;
+
+	--base-heading-font-family: 'FireNight', sans-serif;
+	--base-heading-font-weight: var(--base-font-weight);
+	--base-heading-margin: .5em;
+
+	--base-paragraph-margin: 1em;
+}
+
 // * базовая типографика всего сайта
 html {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5;
+	font-family: var(--base-font-family);
+	font-size: var(--base-font-size);
+	font-weight: var(--base-font-weight);
+	line-height: var(--base-line-height);
 }
 
 // * заголовки
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'FireNight', sans-serif;
-	font-weight: 400;
+	font-family: var(--base-heading-font-family);
+	font-weight: var(--base-heading-font-weight);
+
+	&:first-child:not(:last-child) {
+		margin-block-end: var(--base-heading-margin);
+	}
+	* + & {
+		&:not(:last-child) {
+			margin-block-end: var(--base-heading-margin);
+		}
+		&:not(:first-child) {
+			margin-block-start: var(--base-heading-margin);
+		}
+	}
 }
+
+// * динамические шрифты заголовков
+// * min viewport: 320px / 20rem
+// * max viewport: 960px / 60rem
+// #     min      max
+// * h1: 36 - 6 / 48 - 6
+// * h2: 30 - 4 / 42 - 6
+// * h3: 26 - 4 / 36 - 6
+// * h4: 22 - 2 / 30 - 4
+// * h5: 20 - 2 / 26 - 4
+// * h6: 18     / 22
+// ? https://clamp.font-size.app/
+
 h1 {
-	@media (width < 60rem) {
-		font-size: 2.625rem; // 42px
-	}
-	@media (width >= 60rem) {
-		font-size: 2.625rem; // 42px
-	}
+	font-size: clamp(2.25rem, 1.875rem + 1.875vw, 3rem);
 }
 
 h2 {
-	font-size: 2rem; // 32px
+	font-size: clamp(1.875rem, 1.5rem + 1.875vw, 2.625rem);
 }
 
 h3 {
-	font-size: 1.625rem; // 26px
+	font-size: clamp(1.625rem, 1.3125rem + 1.5625vw, 2.25rem);
 }
 
 h4 {
-	font-size: 1.375rem; // 22px
+	font-size: clamp(1.375rem, 1.125rem + 1.25vw, 1.875rem);
 }
 
 h5 {
-	font-size: 1.125rem; // 18px
+	font-size: clamp(1.25rem, 1.0625rem + 0.9375vw, 1.625rem);
 }
 
 h6 {
-	font-size: 1rem; // 16px
+	font-size: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
 }
 
+// * динамический размер шрифта параграфа
+// * min viewport: 960px / 60rem
+// * max viewport: 1600px / 100rem
+// #    min  max
+// * p: 16 / 18
+// ? https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjMyMHB4IiwibWF4V2lkdGgiOiI5NjBweCIsIm1pbkZvbnRTaXplIjoiMTZweCIsIm1heEZvbnRTaXplIjoiMThweCJ9
 p {
+	font-size: clamp(1rem, 0.8125rem + 0.3125vw, 1.125rem);
+
+	&:first-child:not(:last-child) {
+		margin-block-end: var(--base-paragraph-margin);
+	}
 	* + & {
-		margin-block-start: 1.5em;
+		&:not(:last-child) {
+			margin-block-end: var(--base-paragraph-margin);
+		}
+		&:not(:first-child) {
+			margin-block-start: var(--base-paragraph-margin);
+		}
 	}
 }
