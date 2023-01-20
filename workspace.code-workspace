@@ -16,6 +16,9 @@
 				"savePath": "/docs/css/",
 				"savePathReplacementPairs": null
 			}
-		]
+		],
+		"liveServer.settings.host": "127.0.0.1",
+		"liveServer.settings.port": 5555,
+		"liveServer.settings.root": "/docs/"
 	}
 }
